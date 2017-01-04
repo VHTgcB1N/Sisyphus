@@ -1,7 +1,7 @@
 # Sisyphus
 一个用来分析LOL中数据的工具
 ### 一个例子
-下面是各个adc的及攻速成长曲线（本来应该是折线- -）
+下面是各个adc的攻速成长曲线（本来应该是折线- -）
 ![image](https://github.com/lezhiii/Sisyphus/blob/master/adc%E5%88%9D%E5%A7%8B%E6%94%BB%E9%80%9F.png)
 这是用 src 目录下 marksams.py 完成的（需要一些额外的库
 ### 功能
