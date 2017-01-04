@@ -1,0 +1,84 @@
+{
+    "data": {
+        "10": {
+            "mapId": 10,
+            "image": {
+                "w": 48,
+                "full": "map10.png",
+                "sprite": "map0.png",
+                "group": "map",
+                "h": 48,
+                "y": 0,
+                "x": 48
+            },
+            "mapName": "NewTwistedTreeline"
+        },
+        "1": {
+            "mapId": 1,
+            "image": {
+                "w": 48,
+                "full": "map1.png",
+                "sprite": "map0.png",
+                "group": "map",
+                "h": 48,
+                "y": 0,
+                "x": 144
+            },
+            "mapName": "SummonersRift"
+        },
+        "9": {
+            "mapId": 9,
+            "image": {
+                "w": 48,
+                "full": "map9.png",
+                "sprite": "map0.png",
+                "group": "map",
+                "h": 48,
+                "y": 0,
+                "x": 240
+            },
+            "mapName": "WIPUpdate"
+        },
+        "8": {
+            "mapId": 8,
+            "image": {
+                "w": 48,
+                "full": "map8.png",
+                "sprite": "map0.png",
+                "group": "map",
+                "h": 48,
+                "y": 0,
+                "x": 0
+            },
+            "mapName": "CrystalScar"
+        },
+        "11": {
+            "mapId": 11,
+            "image": {
+                "w": 48,
+                "full": "map11.png",
+                "sprite": "map0.png",
+                "group": "map",
+                "h": 48,
+                "y": 0,
+                "x": 192
+            },
+            "mapName": "SummonersRiftNew"
+        },
+        "12": {
+            "mapId": 12,
+            "image": {
+                "w": 48,
+                "full": "map12.png",
+                "sprite": "map0.png",
+                "group": "map",
+                "h": 48,
+                "y": 0,
+                "x": 96
+            },
+            "mapName": "ProvingGroundsNew"
+        }
+    },
+    "type": "map",
+    "version": "6.24.1"
+}
