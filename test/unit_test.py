@@ -94,7 +94,8 @@ class TestItemClass(unittest.TestCase):
         kr.update_champion(champion)
         print(champion.hp, champion.attackdamage, champion.attackspeed)
         print(champion.crit, champion.critdamage)
-        print(champion.value_dps())
+        print(champion.raw_physical_dps)
+        print(champion.effective_physical_dps)
 
 
 def suit():
