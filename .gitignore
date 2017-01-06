@@ -1,0 +1,8 @@
+__pycache__
+*.json
+config_local.py
+
+# 数据文件
+*.bak
+*.dir
+*.dat
