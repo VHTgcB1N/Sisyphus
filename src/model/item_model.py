@@ -21,7 +21,7 @@ class Item(object):
         print(stat, 'is requiring')
 
     def _FlatArmorMod(self, champion, para, stat):
-        pass
+        champion.armor += para
 
     def _FlatPhysicalDamageMod(self, champion, para, stat):
         champion.attackdamage += para
@@ -34,3 +34,24 @@ class Item(object):
 
     def _FlatCritDamage(self, champion, para, stat):
         champion.critdamage += para
+
+    def _FlatMovementSpeedMod(self, champion, para, stat):
+        champion.movespeed += para
+
+    def _FlatHPPoolMod(self, champion, para, stat):
+        champion.hp += para
+
+    def _FlatMagicDamageMod(self, champion, para, stat):
+        champion.magicdamage += para
+
+    def _FlatSpellBlockMod(self, champion, para, stat):
+        champion.spellblock += para
+
+    def _PercentLifeStealMod(self, champion, para, stat):
+        champion.lifesteal_p += para
+
+    def _PercentBonusArmorPenetration(self, champion, para, stat):
+        champion.pbap += para
+
+    def _FlatArmorPenetration(self, champion, para, stat):
+        champion.fap += para

@@ -59,6 +59,9 @@ class Champion(object):
         for k, v in self.stats.items():
             setattr(self, k, v)
         self.critdamage = 1  # 基础暴击伤害1
+        self.magcidamage = 0  # 初始法强
+        self.lifesteal_p = 0  # 初始生命偷取
+        self.pbap = 0 # 初始百分比额外护甲无视
 
         # 基础攻速
         self.BAS = self.attackspeed = 0.625 / (1 + self.attackspeedoffset)
