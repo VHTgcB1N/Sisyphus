@@ -6,8 +6,8 @@ class Item(object):
 
     def __init__(self, name, item_shelve=item_at_map11):
         self.name = name
-        self.stats = item_at_map11.get_attr_from_item(name, 'stats')
         self._item_shelve = item_shelve
+        self.stats = self._item_shelve.get_attr_from_item(name, 'stats')
 
     def get_item_dict(self):
         ''' '''

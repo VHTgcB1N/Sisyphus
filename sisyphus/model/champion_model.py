@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from ..util.shelve_tool import champion_full
+from .item_model import Item
 
 
 def compute(b, g, n1, n2=1):
@@ -58,6 +59,7 @@ class Champion(object):
         self.stats = stats or champion_full.get_attr_from_item(name, 'stats')
         for k, v in self.stats.items():
             setattr(self, k, v)
+
         self.critdamage = 1  # 基础暴击伤害1
         self.magcidamage = 0  # 初始法强
         self.lifesteal_p = 0  # 初始生命偷取
@@ -87,3 +89,12 @@ class Champion(object):
         # 攻速计算方法: 基础攻速 * 攻速成长
         self.attackspeed = self.BAS * \
             compute(1, self.attackspeedperlevel / 100, level)
+
+    def _build_with_key(self, item_key, map=11):
+        '''默认地图为召唤师峡谷，用item_key选择其中的装备，为召唤师更新属性。
+
+        TODO:
+            根据MAP属性，选择装备数据源
+        '''
+        Item(item_key).update_champion(self)
+        return

@@ -54,7 +54,6 @@ class TestChampionClass(unittest.TestCase):
 
     def test_item_at_map11(self):
         wujin = item_at_map11.get_item_with_key('3031')
-        logging.warn(wujin['description'])
 
 
 class TestItemClass(unittest.TestCase):
