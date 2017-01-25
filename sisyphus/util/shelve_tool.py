@@ -1,10 +1,8 @@
 import shelve
-# import sys
-# sys.path.append(r'd:\workspace\analol\Sisyphus\src')
-# print(sys.path[-1])
-import config
 from functools import reduce
-from util.con_dict import work_dict, discard, discard_paths
+
+from .. import config
+from ..util.con_dict import discard, discard_paths, work_dict
 
 champion_shelve_path = config.get("champion_shelve_path")
 item_shelve_path = config.get("item_shelve_path")

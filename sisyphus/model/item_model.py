@@ -1,17 +1,24 @@
 import re
-from util.shelve_tool import item_at_map11
+from ..util.shelve_tool import item_at_map11
 
 
 class Item(object):
 
-    def __init__(self, name):
+    def __init__(self, name, item_shelve = item_at_map11):
         self.name = name
         self.stats = item_at_map11.get_attr_from_item(name, 'stats')
+        self._item_shelve = item_shelve
 
     def get_item_dict(self):
-        return item_at_map11.get_item_with_key(self.name)
+        ''' '''
+        return self._item_shelve.get_item_with_key(self.name)
 
     def update_champion(self, champion):
+        '''根据物品的相关数据，更新champion的属性，
+
+        champion:必须是Champion的实例
+
+        '''
         for stat in self.stats.keys():
             fun = getattr(self, '_{0}'.format(stat), self._doNothing)
             para = self.stats[stat]

@@ -1,10 +1,7 @@
 import shelve
-# import sys
-# sys.path.append(r'd:\workspace\analol\Sisyphus\src')
-# print(sys.path[-1])
-import config
 from functools import reduce
 
+from .. import config
 
 _f = shelve.open(config.get("champion_shelve_path"))
 _Marksman = ['Jayce', 'Varus', 'Caitlyn', 'Quinn', 'KogMaw', 'Ashe',

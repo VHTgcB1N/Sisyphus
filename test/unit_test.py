@@ -1,16 +1,10 @@
-import sys
-sys.path.append(r'.\src')
-sys.path.append('.')
-
 import unittest
-import config
-# from util.champion import champion_full.get_items,i
-# get_champion_with_name, get_attr_from_champion
-from util.shelve_tool import item_full, champion_full, item_at_map11, _Marksman
-from model.champion_model import Champion, compute
 
-
-from model.item_model import Item
+from sisyphus import config
+from sisyphus.model.champion_model import Champion, compute
+from sisyphus.model.item_model import Item
+from sisyphus.util.shelve_tool import (_Marksman, champion_full, item_at_map11,
+                                       item_full)
 
 
 class TestShelveTool(unittest.TestCase):
@@ -56,13 +50,11 @@ class TestChampionClass(unittest.TestCase):
     def test_value_dps(self):
         stats = champion_full.get_attr_from_item('Vayne', 'stats')
         c = Champion('Vayne', **stats)
-        c.value_dps()
-        print('dps:', c.phiscal_dps)
+        print('dps:', c.raw_physical_dps)
 
     def test_item_at_map11(self):
         wujin = item_at_map11.get_item_with_key('3031')
-        print(wujin['description'])
-        print(wujin.keys())
+        logging.warn(wujin['description'])
 
 
 class TestItemClass(unittest.TestCase):

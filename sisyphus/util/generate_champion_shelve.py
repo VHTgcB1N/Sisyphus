@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-import shelve
 import json
-import sys
-sys.path.append(r'D:\workspace\analol\Sisyphus\src')
-import config
-from util.con_dict import work_dict, discard_paths
+import shelve
 
+from .. import config
+from ..util.con_dict import discard_paths, work_dict
 
 champion_shelve_path = config.get('champion_shelve_path')
 champion_json_path = config.get('champion_json_path')

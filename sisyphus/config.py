@@ -28,7 +28,7 @@ def __init_instanse():
     if __instanse:
         return
     try:
-        from config_local import ConfigLocal
+        from .config_local import ConfigLocal
         if not issubclass(ConfigLocal, Config):
             raise TypeError('自定义配置类必须是config.Config的子类')
         __instanse = ConfigLocal()
