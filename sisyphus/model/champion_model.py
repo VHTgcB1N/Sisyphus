@@ -97,4 +97,3 @@ class Champion(object):
             根据MAP属性，选择装备数据源
         '''
         Item(item_key).update_champion(self)
-        return
