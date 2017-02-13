@@ -1,16 +1,11 @@
-import sys
-sys.path.append(r'.\src')
-sys.path.append('.')
-
 import unittest
-import config
-# from util.champion import champion_full.get_items,i
-# get_champion_with_name, get_attr_from_champion
-from util.shelve_tool import item_full, champion_full, item_at_map11, _Marksman
-from model.champion_model import Champion, compute
 
-
-from model.item_model import Item
+from sisyphus import config
+from sisyphus.model.champion_model import Champion, compute
+from sisyphus.model.item_model import Item
+from sisyphus.util.shelve_tool import (_Marksman, champion_full, item_at_map11,
+                                       item_full, rune_full)
+from sisyphus.util.generate_champion_shelve import generate_rune_shelve
 
 
 class TestShelveTool(unittest.TestCase):
@@ -56,13 +51,9 @@ class TestChampionClass(unittest.TestCase):
     def test_value_dps(self):
         stats = champion_full.get_attr_from_item('Vayne', 'stats')
         c = Champion('Vayne', **stats)
-        c.value_dps()
-        print('dps:', c.phiscal_dps)
 
     def test_item_at_map11(self):
         wujin = item_at_map11.get_item_with_key('3031')
-        print(wujin['description'])
-        print(wujin.keys())
 
 
 class TestItemClass(unittest.TestCase):
@@ -92,14 +83,26 @@ class TestItemClass(unittest.TestCase):
         bf.update_champion(champion)
         kr = Item('3086')
         kr.update_champion(champion)
-        print(champion.hp, champion.attackdamage, champion.attackspeed)
-        print(champion.crit, champion.critdamage)
-        print(champion.raw_physical_dps)
-        print(champion.effective_physical_dps)
+
+
+class TestRuneShelve(unittest.TestCase):
+
+    def test_rune_keys(self):
+        keys = rune_full.item_keys()
+        self.assertEqual(len(keys), 296)
+
+
+class TestRuneAttr(unittest.TestCase):
+
+    def test_attrs(self):
+        vn = Champion('Vayne')
+        runes = rune_full.item_keys()
+        for r in runes:
+            vn.build_runes(r)
 
 
 def suit():
-    suit = unittest.TestLoader().loadTestsFromTestCase(TestItemClass)
+    suit = unittest.TestLoader().loadTestsFromTestCase(TestRuneAttr)
     suit = unittest.TestSuite(suit)
     return suit
 
