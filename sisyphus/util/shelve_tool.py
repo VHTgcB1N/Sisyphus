@@ -7,6 +7,7 @@ from ..util.con_dict import discard, discard_paths, work_dict
 champion_shelve_path = config.get("champion_shelve_path")
 item_shelve_path = config.get("item_shelve_path")
 item_shelve_path_at_map11 = config.get("item_shelve_at_map11")
+rune_shelve_path = config.get("rune_shelve_path")
 _Marksman = ['Jayce', 'Varus', 'Caitlyn', 'Quinn', 'KogMaw', 'Ashe',
              'Tristana', 'Ezreal', 'Kalista', 'Jhin', 'MissFortune',
              'Azir', 'Teemo', 'Twitch', 'Graves', 'Jinx', 'Lucian',
@@ -53,3 +54,4 @@ class Shelve(object):
 item_full = Shelve(item_shelve_path)
 champion_full = Shelve(champion_shelve_path)
 item_at_map11 = Shelve(item_shelve_path_at_map11)
+rune_full = Shelve(rune_shelve_path)
