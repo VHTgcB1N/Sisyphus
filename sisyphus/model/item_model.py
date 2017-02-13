@@ -55,7 +55,7 @@ class Item(object):
         champion.spellblock += para
 
     def _PercentLifeStealMod(self, champion, para, stat):
-        champion.lifesteal_p += para
+        champion.lifesteal += para
 
     def _PercentBonusArmorPenetration(self, champion, para, stat):
         champion.pbap += para

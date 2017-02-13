@@ -31,7 +31,7 @@ class DPS(object):
         return dps
 
     def __get__(self, obj, typ):
-        if not hasattr(self, 'hp'):
+        if not hasattr(self, 'hp') or getattr(self, 'damage') != getattr(obj, 'attackdamage'):
             self.__set__(obj, {})
         return self.get_raw_dps()
 
@@ -60,10 +60,12 @@ class Champion(object):
         for k, v in self.stats.items():
             setattr(self, k, v)
 
-        self.critdamage = 1  # 基础暴击伤害1
+        self.critdamage = 1  # 基础暴击伤害系数1
         self.magcidamage = 0  # 初始法强
-        self.lifesteal_p = 0  # 初始生命偷取
+        self.lifesteal = 0  # 初始生命偷取
+        self.skillvamp = 0  # 初始法术吸血
         self.pbap = 0  # 初始百分比额外护甲无视
+        self.lilethalityt = 0  # 初始护甲穿透
 
         # 基础攻速
         self.BAS = self.attackspeed = 0.625 / (1 + self.attackspeedoffset)
